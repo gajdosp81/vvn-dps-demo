@@ -1,23 +1,21 @@
 <template>
-  <v-app>
-    <!-- MAGENTA HEADER -->
-    <v-app-bar
-      color="primary"
-      elevation="0"
-      height="64"
-    >
-      <v-toolbar-title class="header-title">
-        VVN DPS Demo
-      </v-toolbar-title>
-    </v-app-bar>
+  <!-- MAGENTA BANNER -->
+  <div class="vvn-banner">
+    <div class="vvn-title">VVN DPS Demo</div>
+    <div class="vvn-subtitle">Dashboard</div>
+    <div class="vvn-description">
+      Tu bude strom VVN → Lokalita → IP účty
+    </div>
+  </div>
 
-    <!-- MAIN CONTENT -->
+  <!-- APP CONTENT -->
+  <v-app>
     <v-main>
       <v-container class="mt-6">
         <v-card>
-          <v-card-title>Dashboard</v-card-title>
+          <v-card-title>Obsah</v-card-title>
           <v-card-text>
-            Tu bude strom VVN → Lokalita → IP účty
+            Sem pôjde strom a detail panel.
           </v-card-text>
         </v-card>
       </v-container>
@@ -29,10 +27,27 @@
 </script>
 
 <style scoped>
-.header-title {
+.vvn-banner {
+  width: 100%;
+  background-color: #E20074; /* Magenta */
   color: white;
-  font-size: 1.25rem;
+  padding: 20px 32px;
+}
+
+.vvn-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.vvn-subtitle {
+  font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.vvn-description {
+  font-size: 0.95rem;
+  margin-top: 6px;
+  opacity: 0.9;
 }
 </style>
