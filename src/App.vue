@@ -2,7 +2,7 @@
   <v-app>
     <!-- MAGENTA FULL-WIDTH HEADER -->
     <div class="vvn-header">
-      <span class="vvn-title">VVN DPS Demo</span>
+      <span class="vvn-title">B2B Implementačný plán - DPS Demo</span>
     </div>
 
     <!-- CONTENT (zatím len potvrdenie) -->
