@@ -4,7 +4,8 @@
       Detaily dátovej služby
     </v-card-title>
 
-    <v-card-text>
+    <!-- OPÄŤ: TABUĽKA NIE JE vo v-card-text -->
+    <div style="overflow-x:auto;">
       <table class="dps-table">
         <thead>
           <tr>
@@ -18,21 +19,18 @@
         <tbody>
           <tr>
             <td>
-              <select v-model="model.accessType">
+              <select>
                 <option>BCN</option>
                 <option>BI</option>
                 <option>VoiceFBA</option>
-                <option>Symetr. do ST-IP/MPLS</option>
-                <option>Asymetr. do ST-IP/MPLS</option>
-                <option>Iná dátová služba</option>
               </select>
             </td>
-            <td><input v-model="model.serviceName" /></td>
-            <td><input v-model="model.vlanId" /></td>
-            <td><input v-model="model.location" disabled /></td>
+            <td><input value="BB-454-Sa" /></td>
+            <td><input value="10" /></td>
+            <td><input value="Pražská 15, Banská Bystrica" disabled /></td>
           </tr>
         </tbody>
       </table>
-    </v-card-text>
+    </div>
   </v-card>
 </template>
