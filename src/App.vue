@@ -1,25 +1,27 @@
 <template>
-  <div>
+  <v-app>
+
     <!-- DOCUMENT HEADER -->
     <div class="doc-header">
       B2B Implementačný Plán – DPS Demo
     </div>
 
-    <v-app>
-      <v-main>
-        <v-container class="mt-6">
+    <v-main>
+      <v-container class="mt-6">
 
-          <VvnGroupSection />
-          <DataServiceSection />
+        <!-- SX0125 -->
+        <VvnGroupSection />
 
-        </v-container>
-      </v-main>
-    </v-app>
-  </div>
+        <!-- DATA SERVICE -->
+        <DataServiceSection />
+
+      </v-container>
+    </v-main>
+
+  </v-app>
 </template>
 
 <script setup>
 import VvnGroupSection from './components/sections/VvnGroupSection.vue'
 import DataServiceSection from './components/sections/DataServiceSection.vue'
 </script>
-``
