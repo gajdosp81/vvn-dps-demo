@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-import VvnGroupSection from '@/components/sections/VvnGroupSection.vue'
-import DataServiceSection from '@/components/sections/DataServiceSection.vue'
+import VvnGroupSection from './components/sections/VvnGroupSection.vue'
+import DataServiceSection from './components/sections/DataServiceSection.vue'
 </script>
 
 <style scoped>
