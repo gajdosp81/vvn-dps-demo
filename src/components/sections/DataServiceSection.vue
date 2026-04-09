@@ -5,58 +5,34 @@
     </v-card-title>
 
     <v-card-text>
-      <div class="field">
-        <label>Typ prístupu</label>
-        <select v-model="model.accessType">
-          <option>BCN</option>
-          <option>BI</option>
-          <option>VoiceFBA</option>
-          <option>Symetr. do ST-IP/MPLS</option>
-          <option>Asymetr. do ST-IP/MPLS</option>
-          <option>Iná dátová služba</option>
-        </select>
-      </div>
+      <table class="dps-table">
+        <thead>
+          <tr>
+            <th>Typ prístupu</th>
+            <th>Názov / číslo služby</th>
+            <th>VLAN – ID</th>
+            <th>Lokalita</th>
+          </tr>
+        </thead>
 
-      <div class="field">
-        <label>Názov / číslo dátovej služby</label>
-        <input v-model="model.serviceName" />
-      </div>
-
-      <div class="field">
-        <label>VLAN – ID</label>
-        <input v-model="model.vlanId" />
-      </div>
-
-      <div class="field">
-        <label>Lokalita (adresa)</label>
-        <input v-model="model.location" disabled />
-      </div>
+        <tbody>
+          <tr>
+            <td>
+              <select v-model="model.accessType">
+                <option>BCN</option>
+                <option>BI</option>
+                <option>VoiceFBA</option>
+                <option>Symetr. do ST-IP/MPLS</option>
+                <option>Asymetr. do ST-IP/MPLS</option>
+                <option>Iná dátová služba</option>
+              </select>
+            </td>
+            <td><input v-model="model.serviceName" /></td>
+            <td><input v-model="model.vlanId" /></td>
+            <td><input v-model="model.location" disabled /></td>
+          </tr>
+        </tbody>
+      </table>
     </v-card-text>
   </v-card>
 </template>
-
-<script setup>
-import { reactive } from 'vue'
-
-const model = reactive({
-  accessType: 'BCN',
-  serviceName: '',
-  vlanId: '',
-  location: 'Prazska 15, Banska Bystrica'
-})
-</script>
-
-<style scoped>
-.field {
-  margin-bottom: 12px;
-}
-.field label {
-  display: block;
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-.field input,
-.field select {
-  width: 100%;
-}
-</style>

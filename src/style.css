@@ -294,3 +294,59 @@ code {
     border-right-color: var(--border);
   }
 }
+
+/* ======================================================
+   DPS – Implementačný plán (Excel-like look)
+   ====================================================== */
+
+/* Dokumentový header */
+.doc-header {
+  background-color: #e20074; /* Magenta */
+  color: #ffffff;
+  padding: 14px 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* DPS tabuľky – hustý Excel štýl */
+.dps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem; /* menší font ako štandard */
+}
+
+.dps-table th {
+  background-color: #e20074;   /* magenta hlavička */
+  color: #ffffff;
+  border: 1px solid #c00060;
+  padding: 6px;
+  vertical-align: bottom;
+  text-align: left;
+  white-space: normal;
+}
+
+.dps-table td {
+  border: 1px solid #d0d0d0;
+  padding: 4px;
+  vertical-align: top;
+}
+
+/* Vstupy v tabuľkách */
+.dps-table input,
+.dps-table select,
+.dps-table textarea {
+  width: 100%;
+  font-size: 0.72rem;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+/* Zabránime kolízii s #app text-align:center */
+.dps-table,
+.dps-table th,
+.dps-table td {
+  text-align: left;
+}
+``

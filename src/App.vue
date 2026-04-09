@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- HEADER -->
-    <div class="header">
+    <!-- DOCUMENT HEADER -->
+    <div class="doc-header">
       B2B Implementačný Plán – DPS Demo
     </div>
 
@@ -22,12 +22,4 @@
 import VvnGroupSection from './components/sections/VvnGroupSection.vue'
 import DataServiceSection from './components/sections/DataServiceSection.vue'
 </script>
-
-<style scoped>
-.header {
-  padding: 16px 24px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  border-bottom: 1px solid #ddd;
-}
-</style>
+``
