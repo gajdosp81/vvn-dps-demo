@@ -1,21 +1,18 @@
 <template>
   <v-app>
 
-    <!-- DOCUMENT HEADER -->
     <div class="doc-header">
       B2B Implementačný Plán – DPS Demo
     </div>
 
     <v-main>
-      <v-container class="mt-6">
+      <div style="padding:20px; background:#eef;">
+        TEST – AK VIDÍŠ TENTO TEXT, CONTENT SA RENDERUJE
+      </div>
 
-        <!-- SX0125 -->
-        <VvnGroupSection />
+      <VvnGroupSection />
+      <DataServiceSection />
 
-        <!-- DATA SERVICE -->
-        <DataServiceSection />
-
-      </v-container>
     </v-main>
 
   </v-app>
