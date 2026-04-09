@@ -1,5 +1,5 @@
 /* ======================================================
-   ROOT / BASE THEME (SAFE CSS ONLY)
+   BASE / THEME
    ====================================================== */
 
 :root {
@@ -7,7 +7,6 @@
   --text-h: #08060d;
   --bg: #ffffff;
   --border: #e5e4e7;
-  --accent: #aa3bff;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -22,10 +21,9 @@ body {
 }
 
 /* ======================================================
-   REMOVE STARTER FLEX LAYOUT (VUETIFY FIX)
+   VUETIFY LAYOUT (SAFE)
    ====================================================== */
 
-/* ❌ PÔVODNE tu bol flex layout, ktorý rozbil Vuetify */
 #app {
   width: 100%;
   min-height: 100vh;
@@ -37,7 +35,7 @@ body {
    ====================================================== */
 
 .doc-header {
-  background-color: #e20074; /* Magenta */
+  background-color: #e20074; /* magenta */
   color: #ffffff;
   padding: 14px 24px;
   font-size: 1.4rem;
@@ -46,7 +44,7 @@ body {
 }
 
 /* ======================================================
-   DPS – IMPLEMENTAČNÝ PLÁN (EXCEL STYLE)
+   DPS – IMPLEMENTAČNÝ PLÁN (EXCEL-LIKE TABLES)
    ====================================================== */
 
 .dps-table {
@@ -56,7 +54,7 @@ body {
 }
 
 .dps-table th {
-  background-color: #e20074; /* Magenta */
+  background-color: #e20074;
   color: #ffffff;
   border: 1px solid #c00060;
   padding: 6px;
@@ -71,7 +69,6 @@ body {
   vertical-align: top;
 }
 
-/* inputs inside tables */
 .dps-table input,
 .dps-table select,
 .dps-table textarea {
@@ -82,7 +79,7 @@ body {
   background: #ffffff;
 }
 
-/* ensure tables are not centered by old styles */
+/* force left alignment (starter template override) */
 .dps-table,
 .dps-table th,
 .dps-table td {
