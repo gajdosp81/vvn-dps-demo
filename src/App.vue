@@ -1,20 +1,20 @@
 <template>
   <v-app>
-    <!-- MAGENTA HEADER -->
     <div class="vvn-header">
       <span class="vvn-title">VVN DPS Demo</span>
     </div>
 
-    <!-- TU MUSÍ BYŤ ROUTER -->
     <v-main>
-      <v-container class="mt-6">
-        <router-view />
+      <v-container>
+        <h2 style="color:red">ROUTER SA NEPOUŽÍVA</h2>
+        <VvnDashboard />
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script setup lang="ts">
+import VvnDashboard from '@/views/VvnDashboard.vue'
 </script>
 
 <style scoped>
