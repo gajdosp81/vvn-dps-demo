@@ -1,35 +1,31 @@
 <template>
-  <v-app>
-    <div class="vvn-header">
-      <span class="vvn-title">VVN DPS Demo</span>
+  <div style="padding:20px">
+    <div
+      style="
+        width:100%;
+        height:64px;
+        background:#E20074;
+        color:white;
+        display:flex;
+        align-items:center;
+        font-size:20px;
+        padding-left:24px;
+      "
+    >
+      VVN DPS Demo
     </div>
 
-    <v-main>
-      <v-container>
-        <h2 style="color:red">ROUTER SA NEPOUŽÍVA</h2>
-        <VvnDashboard />
-      </v-container>
-    </v-main>
-  </v-app>
+    <h2 style="margin-top:24px;color:red">
+      AK VIDÍŠ TENTO TEXT ČERVENÝ,
+      VUE SA SPUSTILO SPRÁVNE
+    </h2>
+
+    <p>
+      Timestamp: {{ now }}
+    </p>
+  </div>
 </template>
 
 <script setup lang="ts">
-import VvnDashboard from '@/views/VvnDashboard.vue'
+const now = new Date().toISOString()
 </script>
-
-<style scoped>
-.vvn-header {
-  width: 100%;
-  height: 64px;
-  background-color: #E20074;
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-}
-
-.vvn-title {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-</style>
