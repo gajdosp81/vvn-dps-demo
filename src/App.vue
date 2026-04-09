@@ -1,13 +1,21 @@
 <template>
- pôjdu sem ↓ -->  <!-- HEADER -->
-        <!-- Emergency numbers -->
-        <!-- Typy a počty použitých brán -->
-        <!-- Skupinové doplnkové služby -->
-        <!-- IP účty (SX0131) -->
+  <div>
+    <!-- HEADER -->
+    <div class="header">
+      B2B Implementačný Plán – DPS Demo
+    </div>
 
-      </v-container>
-    </v-main>
-  </v-app>
+    <v-app>
+      <v-main>
+        <v-container class="mt-6">
+
+          <VvnGroupSection />
+          <DataServiceSection />
+
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <script setup>
@@ -23,17 +31,3 @@ import DataServiceSection from '@/components/sections/DataServiceSection.vue'
   border-bottom: 1px solid #ddd;
 }
 </style>
-  <div class="header">
-    B2B Implementačný Plán – DPS Demo
-  </div>
-
-  <v-app>
-    <v-main>
-      <v-container class="mt-6">
-
-        <!-- VVN GROUP (SX0125) -->
-        <VvnGroupSection />
-
-        <!-- DATA SERVICE -->
-        <DataServiceSection />
-
