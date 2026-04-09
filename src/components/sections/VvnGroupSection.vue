@@ -1,90 +1,58 @@
 <template>
   <v-card class="mb-6">
     <v-card-title>
-      VVN skupina (SX0125)
+      Detaily VVN skupiny zákazníka (SX0125)
     </v-card-title>
 
     <v-card-text>
-      <!-- Aktivita -->
-      <div class="field">
-        <label>Aktivita</label>
-        <select v-model="model.activity">
-          <option>zriadiť novú VVN skupinu</option>
-          <option>zrušiť VVN skupinu</option>
-          <option>bez zmeny</option>
-        </select>
-      </div>
+      <table class="vvn-table">
+        <thead>
+          <tr>
+            <th>Aktivita</th>
+            <th>Názov VVN skupiny</th>
+            <th>Login administrátora skupiny</th>
+            <th>Heslo administrátora skupiny</th>
+            <th>Verejné číslo hlasového portálu</th>
+            <th>Interná klapka hlasového portálu</th>
+            <th>Interný rozlišovací prefix</th>
+            <th>Počet simultánnych hovorov</th>
+            <th>Poskytovateľ služby (BroadSoft)</th>
+            <th>Číselný rozsah pre VVN účty</th>
+            <th>Čísla MIMO číselného rozsahu</th>
+            <th>Názov tenanta / domény pre Teams</th>
+            <th>Volania Teams – upresnenie</th>
+          </tr>
+        </thead>
 
-      <!-- Názov -->
-      <div class="field">
-        <label>Názov VVN skupiny</label>
-        <input v-model="model.name" />
-      </div>
+        <tbody>
+          <tr>
+            <td>
+              <select v-model="model.activity">
+                <option>zriadiť novú VVN skupinu</option>
+                <option>zrušiť VVN skupinu</option>
+                <option>bez zmeny</option>
+              </select>
+            </td>
 
-      <!-- Admin prístup -->
-      <div class="field">
-        <label>Login administrátora skupiny</label>
-        <input v-model="model.adminLogin" />
-      </div>
-
-      <div class="field">
-        <label>Heslo administrátora skupiny</label>
-        <input type="password" v-model="model.adminPassword" />
-      </div>
-
-      <!-- Hlasový portál -->
-      <div class="field-group">
-        <div class="field">
-          <label>Verejné číslo hlasového portálu</label>
-          <input v-model="model.portalPublicNumber" />
-        </div>
-
-        <div class="field">
-          <label>Interná klapka hlasového portálu</label>
-          <input v-model="model.portalExtension" />
-        </div>
-      </div>
-
-      <!-- Prefix + hovory -->
-      <div class="field-group">
-        <div class="field">
-          <label>Interný rozlišovací prefix</label>
-          <input v-model="model.internalPrefix" />
-        </div>
-
-        <div class="field">
-          <label>Počet simultánnych hovorov</label>
-          <input type="number" v-model="model.simultaneousCalls" />
-        </div>
-      </div>
-
-      <!-- Poskytovateľ -->
-      <div class="field">
-        <label>Poskytovateľ služby</label>
-        <input v-model="model.provider" disabled />
-      </div>
-
-      <!-- Číselné rozsahy -->
-      <div class="field">
-        <label>Číselný rozsah pre VVN účty</label>
-        <input v-model="model.ddiRange" />
-      </div>
-
-      <div class="field">
-        <label>Čísla mimo číselného rozsahu</label>
-        <input v-model="model.mimoNumbers" />
-      </div>
-
-      <!-- Teams -->
-      <div class="field">
-        <label>Názov tenanta / doména pre Volania Teams</label>
-        <input v-model="model.teamsTenant" />
-      </div>
-
-      <div class="field">
-        <label>Volania Teams – upresnenie / ostatné info</label>
-        <textarea v-model="model.teamsInfo" rows="2" />
-      </div>
+            <td><input v-model="model.name" /></td>
+            <td><input v-model="model.adminLogin" /></td>
+            <td><input type="password" v-model="model.adminPassword" /></td>
+            <td><input v-model="model.portalPublicNumber" /></td>
+            <td><input v-model="model.portalExtension" /></td>
+            <td><input v-model="model.internalPrefix" /></td>
+            <td><input type="number" v-model="model.simultaneousCalls" /></td>
+            <td>
+              <input v-model="model.provider" disabled />
+            </td>
+            <td><input v-model="model.ddiRange" /></td>
+            <td><input v-model="model.mimoNumbers" /></td>
+            <td><input v-model="model.teamsTenant" /></td>
+            <td>
+              <textarea rows="2" v-model="model.teamsInfo"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </v-card-text>
   </v-card>
 </template>
@@ -94,41 +62,47 @@ import { reactive } from 'vue'
 
 const model = reactive({
   activity: 'zriadiť novú VVN skupinu',
-  name: '',
+  name: 'agom_sr',
   adminLogin: '',
   adminPassword: '',
-  portalPublicNumber: '',
-  portalExtension: '',
-  internalPrefix: '',
-  simultaneousCalls: 0,
+  portalPublicNumber: '0334114500',
+  portalExtension: '500',
+  internalPrefix: '-',
+  simultaneousCalls: 15,
   provider: 'Slovak Telecom, a.s',
-  ddiRange: '',
-  mimoNumbers: '',
+  ddiRange: 'nová - rozsah 100',
+  mimoNumbers: '0335489521, 0335895122',
   teamsTenant: '',
   teamsInfo: ''
 })
 </script>
 
 <style scoped>
-.field {
-  margin-bottom: 12px;
-}
-.field label {
-  display: block;
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-.field input,
-.field select,
-.field textarea {
+.vvn-table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
 }
 
-.field-group {
-  display: flex;
-  gap: 16px;
+.vvn-table th {
+  background: #fff6b0; /* podobné žltým hlavičkám v Exceli */
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+  vertical-align: bottom;
 }
-.field-group .field {
-  flex: 1;
+
+.vvn-table td {
+  border: 1px solid #ccc;
+  padding: 4px;
+  vertical-align: top;
+}
+
+.vvn-table input,
+.vvn-table select,
+.vvn-table textarea {
+  width: 100%;
+  font-size: 0.8rem;
 }
 </style>
+``
