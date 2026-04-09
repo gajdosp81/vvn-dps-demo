@@ -1,31 +1,26 @@
 <template>
-  <div style="padding:20px">
-    <div
-      style="
-        width:100%;
-        height:64px;
-        background:#E20074;
-        color:white;
-        display:flex;
-        align-items:center;
-        font-size:20px;
-        padding-left:24px;
-      "
-    >
-      VVN DPS Demo
-    </div>
+  <v-app>
+    <!-- MAGENTA HEADER -->
+    <v-app-bar color="primary" density="comfortable">
+      <v-toolbar-title class="text-white">
+        VVN DPS Demo
+      </v-toolbar-title>
+    </v-app-bar>
 
-    <h2 style="margin-top:24px;color:red">
-      AK VIDÍŠ TENTO TEXT ČERVENÝ,
-      VUE SA SPUSTILO SPRÁVNE
-    </h2>
-
-    <p>
-      Timestamp: {{ now }}
-    </p>
-  </div>
+    <!-- CONTENT -->
+    <v-main>
+      <v-container class="mt-6">
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup lang="ts">
-const now = new Date().toISOString()
 </script>
+
+<style scoped>
+.text-white {
+  color: white;
+}
+</style>

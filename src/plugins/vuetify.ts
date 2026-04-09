@@ -1,17 +1,11 @@
+// src/plugins/vuetify.ts
+import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-export default createVuetify({
-  theme: {
-    defaultTheme: 'magentaTheme',
-    themes: {
-      magentaTheme: {
-        dark: false,
-        colors: {
-          primary: '#E20074',     // magenta
-          secondary: '#3A3A3A',
-          background: '#F5F5F5'
-        }
-      }
-    }
-  }
+export const vuetify = createVuetify({
+  components,
+  directives,
 })
+``
