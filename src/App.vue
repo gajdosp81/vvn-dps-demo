@@ -8,6 +8,7 @@
     <v-main>
       <VvnGroupSection />
       <DataServiceSection />
+      <IpAccountsSection />
     </v-main>
 
   </v-app>
@@ -16,4 +17,5 @@
 <script setup>
 import VvnGroupSection from './components/sections/VvnGroupSection.vue'
 import DataServiceSection from './components/sections/DataServiceSection.vue'
+import IpAccountsSection from './components/sections/IpAccountsSection.vue'
 </script>
