@@ -1,23 +1,51 @@
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
-const row = reactive({
-  activity: 'zriadenie účtu',
-  provisioningType: 'nový účet',
-  publicNumber: '0334114527',
-  extension: '527',
-  userFirstName: 'Fero',
-  userLastName: 'Kokoška',
-  deviceType: 'Linksys SPA 942',
-  macAddress: '',
-  ipAddress: '',
-  servicePackage: 'Klasik',
-  teamsEnabled: 'zriadiť',
-  callerIdPresentation: 'nezverejniť',
-  voicemail: 'zriadiť',
-  costCenter: '',
-  additionalInfo: ''
-})
+const rows = ref([
+  {
+    id: Date.now(),
+    activity: 'zriadenie účtu',
+    provisioningType: 'nový účet',
+    publicNumber: '0334114527',
+    extension: '527',
+    firstName: 'Fero',
+    lastName: 'Kokoška',
+    deviceType: 'Linksys SPA 942',
+    macAddress: '',
+    ipAddress: '',
+    servicePackage: 'Klasik',
+    teams: 'zriadiť',
+    publishNumber: 'nezverejniť',
+    voicemail: 'zriadiť',
+    costCenter: '',
+    note: ''
+  }
+])
+
+function addRow () {
+  rows.value.push({
+    id: Date.now() + Math.random(),
+    activity: 'zriadenie účtu',
+    provisioningType: '',
+    publicNumber: '',
+    extension: '',
+    firstName: '',
+    lastName: '',
+    deviceType: '',
+    macAddress: '',
+    ipAddress: '',
+    servicePackage: '',
+    teams: '',
+    publishNumber: '',
+    voicemail: '',
+    costCenter: '',
+    note: ''
+  })
+}
+
+function removeRow (index) {
+  rows.value.splice(index, 1)
+}
 </script>
 
 <template>
@@ -36,20 +64,21 @@ const row = reactive({
             <th>Klapka</th>
             <th>Meno</th>
             <th>Priezvisko</th>
-            <th>Typ KZ / zariadenia</th>
-            <th>MAC / výrobný údaj</th>
+            <th>Typ zariadenia</th>
+            <th>MAC / výr. číslo</th>
             <th>IP adresa</th>
             <th>Balík služieb</th>
             <th>Volania Teams</th>
             <th>Zverejnenie čísla</th>
             <th>Hlasová schránka</th>
             <th>Nákladové stredisko</th>
-            <th>Upresnenie / info</th>
+            <th>Upresnenie</th>
+            <th>Akcia</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
+          <tr v-for="(row, index) in rows" :key="row.id">
             <td>
               <select v-model="row.activity">
                 <option>zriadenie účtu</option>
@@ -68,8 +97,8 @@ const row = reactive({
 
             <td><input v-model="row.publicNumber" /></td>
             <td><input v-model="row.extension" /></td>
-            <td><input v-model="row.userFirstName" /></td>
-            <td><input v-model="row.userLastName" /></td>
+            <td><input v-model="row.firstName" /></td>
+            <td><input v-model="row.lastName" /></td>
             <td><input v-model="row.deviceType" /></td>
             <td><input v-model="row.macAddress" /></td>
             <td><input v-model="row.ipAddress" /></td>
@@ -84,14 +113,14 @@ const row = reactive({
             </td>
 
             <td>
-              <select v-model="row.teamsEnabled">
+              <select v-model="row.teams">
                 <option>zriadiť</option>
                 <option>nezriadiť</option>
               </select>
             </td>
 
             <td>
-              <select v-model="row.callerIdPresentation">
+              <select v-model="row.publishNumber">
                 <option>zverejniť</option>
                 <option>nezverejniť</option>
               </select>
@@ -105,10 +134,18 @@ const row = reactive({
             </td>
 
             <td><input v-model="row.costCenter" /></td>
-            <td><input v-model="row.additionalInfo" /></td>
+            <td><input v-model="row.note" /></td>
+
+            <td>
+              <button @click="removeRow(index)">❌</button>
+            </td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div style="padding:8px">
+      <button @click="addRow">➕ Pridať IP účet</button>
     </div>
   </v-card>
 </template>
