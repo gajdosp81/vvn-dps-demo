@@ -6,13 +6,8 @@
     </div>
 
     <v-main>
-      <div style="padding:20px; background:#eef;">
-        TEST – AK VIDÍŠ TENTO TEXT, CONTENT SA RENDERUJE
-      </div>
-
       <VvnGroupSection />
       <DataServiceSection />
-
     </v-main>
 
   </v-app>
