@@ -1,3 +1,4 @@
+<h2 style="color:red">VVN DASHBOARD LOADED</h2>
 <template>
   <v-container>
     <v-row>
