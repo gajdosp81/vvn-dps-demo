@@ -40,7 +40,7 @@
             <td><input value="500" /></td>
             <td><input value="-" /></td>
             <td><input type="number" value="15" /></td>
-            <td><input value="Slovak Telecom, a.s" disabled /></td>
+            <td><input value="Slovak Telecom, a.s"/></td>
             <td><input value="nová - rozsah 100" /></td>
             <td><input value="0335489521, 0335895122" /></td>
             <td><input /></td>

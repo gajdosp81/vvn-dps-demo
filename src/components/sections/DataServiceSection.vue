@@ -27,7 +27,7 @@
             </td>
             <td><input value="BB-454-Sa" /></td>
             <td><input value="10" /></td>
-            <td><input value="Pražská 15, Banská Bystrica" disabled /></td>
+            <td><input value="Pražská 15, Banská Bystrica"/></td>
           </tr>
         </tbody>
       </table>
