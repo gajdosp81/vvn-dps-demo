@@ -1,20 +1,23 @@
 <template>
-  <v-container>
-    <v-card>
-      <v-card-title>
-        VVN skupiny
-      </v-card-title>
+  <v-row>
+    <v-col cols="4">
+      <VvnHierarchyTree :groups="vvnStore.groups" />
+    </v-col>
 
-      <v-card-text>
-        <p>
-          Demo prostredie pre správu:
-        </p>
-        <ul>
-          <li><strong>VVN skupiny (SX0125)</strong></li>
-          <li><strong>IP účty (SX0131)</strong></li>
-          <li>Hierarchia: VVN → Lokalita → IP účet</li>
-        </ul>
-      </v-card-text>
-    </v-card>
-  </v-container>
+    <v-col cols="8">
+      <v-card>
+        <v-card-title>Detail</v-card-title>
+        <v-card-text>
+          Vyber položku v hierarchii (VVN / lokalita / IP účet)
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
+
+<script setup lang="ts">
+import { useVvnStore } from '@/store/vvnStore'
+import VvnHierarchyTree from '@/components/tree/VvnHierarchyTree.vue'
+
+const vvnStore = useVvnStore()
+</script>
