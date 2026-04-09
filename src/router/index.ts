@@ -5,9 +5,9 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('@/views/VvnDashboard.vue')
-    }
-  ]
+      component: () => import('@/views/VvnDashboard.vue'),
+    },
+  ],
 })
 
 export default router
